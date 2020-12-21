@@ -1,0 +1,43 @@
+---
+title: "Data Science Capstone Final Project"
+author: "Roberto Rojas"
+date: "December 21, 2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+The purpose of the project is to create a text prediction application with the R Shiny package that predicts words using a natural language processing model, that is, creating an application based on a predictive text model.
+
+The idea is that the user enters a word or phrase as input, the application will try to predict the next word, similar to the way most smartphone keyboards are implemented today using Swiftkey technology or the like.
+
+The predictive model will be trained using a corpus, a collection of written texts, called HC Corpora that has been filtered by language.
+
+## Prediction Model
+
+The prediction model uses the ordered data principles applied to R text mining. The following key steps are involved in the prediction model.
+
+* As input, raw text files are taken for model training.
+* Perform a cleaning process of the raw data; separating them into n grams of 2, 3, 4, 5 and 6 words and saving them as tibbles.
+* Sort the n tibbles grams by frequency and save the data as .rds files.
+
+The function "N grams uses a regression type prediction model".
+        - User provides input phrase.
+        - The model uses the last 5, 4, 3, 2, or 1 words to predict the best sixth, fifth, fourth, third, or second match in the data.
+As a result, predict the next word as a result.
+It is largely based on what was done in the first installment of exercises for word predictor applications.
+
+
+## Next word prediction app
+
+The Next Word Predictor application provides a simple user interface for the next word prediction model. The application takes as input a phrase (multiple words) in a text box input and generates a prediction of the next word.
+
+## Reference
+
+[Tidy Data](http://vita.had.co.nz/papers/tidy-data.html)
+
+[Text Mining with R: A Tidy Approach](http://tidytextmining.com/index.html)
